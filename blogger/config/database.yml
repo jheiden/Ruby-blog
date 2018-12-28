@@ -23,3 +23,7 @@ test:
 production:
   <<: *default
   database: db/production.sqlite3
+
+# This file controls how Rails DB connection system will access your DB.
+# If connecting to an existing DB you would enter the config parameters here. When starting a new project from scratch
+# => it can be left as default and a new DB will be created automatically. The DB will be stored in db/development.sqlite3
