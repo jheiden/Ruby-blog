@@ -14,13 +14,21 @@ class ArticlesController < ApplicationController
         @article = Article.new
     end
 
-# body not displayed as it should.
-
     def create
-    @article = Article.new(article_params)
-    @article.save
-    
-    redirect_to article_path(@article)
+        @article = Article.new(article_params)
+        @article.save
+        redirect_to article_path(@article)
+    end
+
+    def destroy
+        @article = Article.find(params[:id])
+        @article.destroy
+        # instead of rendering index we redirect to the index action which will do the job for us.
+        redirect_to action: "index"
+    end
+
+    def edit
+
     end
 
 
