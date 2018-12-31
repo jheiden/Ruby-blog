@@ -4,6 +4,7 @@ class ArticlesController < ApplicationController
 
     def index
         @articles = Article.all
+ 
     end
 
     def show
@@ -44,6 +45,7 @@ class ArticlesController < ApplicationController
         redirect_to article_path(@article)
     end
 
+   
 
 
 end
