@@ -5,6 +5,9 @@ Rails.application.routes.draw do
     resources :comments
 end
   resources :tags
+  
+  get 'about' => 'pages#about'
+
+  
 end
 
-get 'about' => 'pages#about'
