@@ -1,7 +1,10 @@
 class Article < ActiveRecord::Base
-    has_many :comments
+
+    # Enforcing referential integrity through applying the <dependent: :destroy> method for the <has_many> method.
+    # We would otherwise have "orphaned" tags and comments after deleting an article.
+    has_many :comments, dependent: :destroy
     has_many :taggings
-    has_many :tags, through: :taggings
+    has_many :tags, through: :taggings, dependent: :destroy
 
     def tag_list
         self.tags.collect do |tag|
