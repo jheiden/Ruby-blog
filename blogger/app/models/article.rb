@@ -6,6 +6,12 @@ class Article < ActiveRecord::Base
     has_many :taggings
     has_many :tags, through: :taggings, dependent: :destroy
 
+    # Declaring that paperclip should accept a file attachment and that there are fields to store information about
+    # this attachment which starts with image_ in this models DB table.
+    has_attached_file :image # <has_attached_file> method is a part of the paperclip library.
+    
+    validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png"]
+
     def tag_list
         self.tags.collect do |tag|
           tag.name
