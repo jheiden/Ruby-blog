@@ -27,7 +27,11 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-  gem "paperclip"
+# Using paperclip combined imagemagick to handle upload of images to articles => restart server and run bundle within terminal to install.
+gem "paperclip"
+
+# Using sorcery for authentication (auth. service gem) => restart server and run bundle within terminal to install.
+gem 'sorcery'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
