@@ -9,7 +9,7 @@ end
   get 'about' => 'pages#about'
   get 'login' => 'author_sessions#new' # invokes the <new> method of the controller ( => = alias to author_session action)
   get 'logout' => 'author_sessions#destroy' # invokes the <destroy> method of the controller (=> =alias to author_session action)
-
+  
   resources :authors
 end
 
