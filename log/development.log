@@ -18829,3 +18829,16 @@ Processing by ArticlesController#show as HTML
 Completed 200 OK in 103ms (Views: 82.5ms | ActiveRecord: 3.8ms)
 
 
+Started GET "/articles/" for 127.0.0.1 at 2019-01-04 14:50:21 +0100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/johanheidenberg/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:3
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:5
+  Rendered articles/index.html.erb within layouts/application (29.6ms)
+Completed 200 OK in 425ms (Views: 403.2ms | ActiveRecord: 2.5ms)
+
+
